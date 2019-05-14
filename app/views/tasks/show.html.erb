@@ -1,0 +1,16 @@
+
+<h2>
+  <%= @task.title %>
+</h2>
+
+<p>Done ?  <%= checked(@task) %></p>
+
+<p><%= @task.details %> </p>
+
+<p>
+  <%= "<i class='fas fa-check-square'></i> Completed".html_safe if @task.completed %>
+  <%= "<i class='far fa-square'></i> Not completed".html_safe if @task.completed == false %>
+</p>
+<%= link_to 'Update task', edit_path %>
+
+<%= link_to 'Back to list', tasks_path %>
